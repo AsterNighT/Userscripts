@@ -2,9 +2,9 @@
 // @name PaperJudge
 // @description Label paper with its CCF Level
 // @namespace https://github.com/AsterNighT/Userscripts
-// @match https://dblp.org/search?q=*
+// @match https://dblp.org/*
 // @license MIT
-// @version 1.0.0
+// @version 1.0.1
 // @author AsterNighT
 // @run-at document-idle
 // @require https://raw.githubusercontent.com/evanplaice/jquery-csv/main/src/jquery.csv.js
