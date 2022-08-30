@@ -48,11 +48,25 @@ function searchInDatabase(site) {
     }
     // We do not know this site!
     console.log(`Unknown site: ${site}`);
-    return "Unknown";
+    return {
+        text: "Unknown",
+        color: mapLevelToColor("Unknown")
+    };
 }
 
 function getDescriptorFromItem(item) {
-    return `${item.level} - ${item.type} - ${catagoryMapping[parseInt(item.category)]}`
+    return {
+        text: `${item.level} - ${item.type} - ${catagoryMapping[parseInt(item.category)]}`,
+        color: mapLevelToColor(item.level)
+    }
+}
+
+function mapLevelToColor(level) {
+    if (level === "A") return "#ffa500";
+    if (level === "B") return "#fad200";
+    if (level === "C") return "#e5f500";
+    if (level === "Unknown") return "#ffffff";
+    return "#ff0000";
 }
 
 function appendDescriptor() {
@@ -71,7 +85,8 @@ function handleNode(target) {
     let site = candidate.getAttribute("href");
     let descriptor = searchInDatabase(site);
     let node = document.createElement('div');
-    node.innerHTML = `${descriptor}`;
+    node.innerHTML = `${descriptor.text}`;
+    node.style = `background-color: ${descriptor.color};`;
     target.appendChild(node);
 }
 
