@@ -7,7 +7,6 @@
 // @version 1.0.0
 // @author AsterNighT
 // @run-at document-idle
-// @require file://D:\work\Userscripts\scripts\paperjudge\paperjudge.user.js
 // @require https://raw.githubusercontent.com/evanplaice/jquery-csv/main/src/jquery.csv.js
 // ==/UserScript==
 
